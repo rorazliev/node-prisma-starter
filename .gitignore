@@ -1,0 +1,5 @@
+coverage
+db
+dist
+node_modules
+.env

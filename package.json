@@ -1,0 +1,23 @@
+{
+  "name": "node-prisma-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "homepage": "https://github.com/rorazliev/node-prisma-starter",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rorazliev/node-prisma-starter.git"
+  },
+  "bugs": {
+		"url": "https://github.com/rorazliev/node-prisma-starter/issues"
+	},
+  "author": {
+    "name": "Ruslan Orazliev",
+    "url": "https://linkedin.com/in/rorazliev"
+  },
+  "license": "MIT"
+}
