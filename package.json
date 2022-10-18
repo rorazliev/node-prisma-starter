@@ -4,7 +4,14 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon ./src/index.ts",
+    "build": "rm -rf dist && tsc",
+    "lint:check": "eslint . --ext .ts",
+    "lint:write": "eslint . --ext .ts --fix",
+    "prettier:check": "prettier . --check",
+    "prettier:write": "prettier . --write",
+    "types:check": "tsc --pretty --noEmit",
+    "check:all": "npm run lint:check && npm run prettier:check && npm run types:check"
   },
   "keywords": [],
   "homepage": "https://github.com/rorazliev/node-prisma-starter",
