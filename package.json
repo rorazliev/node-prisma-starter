@@ -12,6 +12,8 @@
     "prettier:write": "prettier . --write",
     "types:check": "tsc --pretty --noEmit",
     "check:all": "npm run lint:check && npm run prettier:check && npm run types:check",
+    "docker:up": "docker compose up -d db",
+    "docker:down": "docker compose down && rm -rf db",
     "prisma:migrate": "prisma migrate dev",
     "prisma:generate": "prisma generate",
     "prisma:seed": "prisma db seed",
