@@ -29,6 +29,8 @@ jobs:
 
       - name: Prisma Seed
         run: npm run prisma:migrate --name init
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
       - name: Build
         run: npm run build
