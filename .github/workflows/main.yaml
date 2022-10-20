@@ -1,0 +1,40 @@
+name: main
+
+on:
+  - pull_request
+  - push
+
+jobs:
+  ci:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Check Code Quality
+        run: npm run check:all
+
+      - name: Docker Up
+        run: npm run docker:up
+
+      - name: Prisma Seed
+        run: npm run prisma:migrate --name init
+
+      - name: Build
+        run: npm run build
+        env:
+          PORT: ${{ secrets.PORT }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+      - name: Run Tests
+        run: npm run test
