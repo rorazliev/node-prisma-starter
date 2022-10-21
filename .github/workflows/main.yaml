@@ -8,6 +8,9 @@ jobs:
   ci:
     timeout-minutes: 10
     runs-on: ubuntu-latest
+    env:
+      PORT: ${{ secrets.PORT }}
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
     steps:
       - name: Checkout
@@ -29,14 +32,9 @@ jobs:
 
       - name: Prisma Seed
         run: npm run prisma:migrate --name init
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
       - name: Build
         run: npm run build
-        env:
-          PORT: ${{ secrets.PORT }}
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
       - name: Run Tests
         run: npm run test
