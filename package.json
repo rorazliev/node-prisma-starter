@@ -1,7 +1,7 @@
 {
   "name": "node-prisma-starter",
   "version": "1.0.0",
-  "description": "",
+  "description": "A REST API app starter with TypeScript, Node.js, and Prisma",
   "main": "dist/index.js",
   "scripts": {
     "dev": "nodemon ./src/index.ts",
@@ -22,7 +22,16 @@
     "prisma:seed": "prisma db seed",
     "prisma:studio": "prisma studio"
   },
-  "keywords": [],
+  "keywords": [
+    "docker",
+    "github-actions",
+    "express",
+    "jest",
+    "nodejs",
+    "prisma",
+    "rest-api",
+    "typescript"
+  ],
   "homepage": "https://github.com/rorazliev/node-prisma-starter",
   "repository": {
     "type": "git",
